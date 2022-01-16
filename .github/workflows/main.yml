@@ -1,0 +1,33 @@
+on: [push]
+env:
+  NAMESPACE: Boss
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    # Add the JFrog CLI      
+    - uses: jfrog/setup-jfrog-cli@v2
+      env:
+        JF_ARTIFACTORY: ${{ secrets.JF_ARTIFACTORY_SECRET }}
+    # Create the Docker image and collect the envioroment variable
+    - run: |
+        docker build . --file Dockerfile --tag batelz-docker.jfrog.io/AzureWorkshop:latest
+        jfrog rt docker-push batelz-docker.jfrog.io/AzureWorkshop:latest
+    # Set the target AKS cluster.    
+    - uses: Azure/aks-set-context@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+        cluster-name: JFrogAKS
+        resource-group: JFrogWorkshopCluster
+    # Deploy to our AKS        
+    - uses: Azure/k8s-deploy@v1.4
+      with:
+        manifests: |
+          deployment.yml
+        images: |
+          batelz-docker.jfrog.io/AzureWorkshop:latest
+    - run: |
+        jfrog rt dl artifacts/
+        jfrog rt u aether artifacts/
+        jfrog rt bp
