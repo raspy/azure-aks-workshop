@@ -12,8 +12,8 @@ jobs:
         JF_ARTIFACTORY_1: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
     # Create the Docker image and collect the envioroment variable
     - run: |
-        docker build . --file Dockerfile --tag batelz-docker.jfrog.io/AzureWorkshop:latest
-        jfrog rt docker-push batelz-docker.jfrog.io/AzureWorkshop:latest
+        docker build . --file Dockerfile --tag batelz.jfrog.io/azure-workshop/aks 
+        jfrog rt dp batelz.jfrog.io/azure-workshop/aks azure-workshop
     # Set the target AKS cluster.    
     - uses: Azure/aks-set-context@v1
       with:
@@ -21,13 +21,14 @@ jobs:
         cluster-name: JFrogAKS
         resource-group: JFrogWorkshopCluster
     # Deploy to our AKS        
-    - uses: Azure/k8s-deploy@v1.4
+    - uses: Azure/k8s-deploy@v1.3
       with:
         manifests: |
           deployment.yml
         images: |
-          batelz-docker.jfrog.io/AzureWorkshop:latest
+          batelz.jfrog.io/azure-workshop/azure-workshop
     - run: |
         jfrog rt dl artifacts/
         jfrog rt u aether artifacts/
+        jfrog rt bce
         jfrog rt bp
