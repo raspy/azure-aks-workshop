@@ -9,7 +9,7 @@ jobs:
     # Add the JFrog CLI      
     - uses: jfrog/setup-jfrog-cli@v2
       env:
-        JF_ARTIFACTORY: ${{ secrets.JF_ARTIFACTORY_SECRET }}
+        JF_ARTIFACTORY: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
     # Create the Docker image and collect the envioroment variable
     - run: |
         docker build . --file Dockerfile --tag batelz-docker.jfrog.io/AzureWorkshop:latest
