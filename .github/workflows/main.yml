@@ -13,12 +13,12 @@ jobs:
     # Create the Docker image and collect the envioroment variable
     - run: |
         cd workshop-app
-        
+        docker build . --file Dockerfile --tag bateltest.jfrog.io/azure-workshop/aks 
+        jfrog rt dp bateltest.jfrog.io/azure-workshop/aks azure-workshop
     # Set the target AKS cluster.    
     - uses: Azure/aks-set-context@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        allow-no-subscriptions: true
         cluster-name: JFrogAKS
         resource-group: JFrogWorkshopCluster
     # Deploy to our AKS        
