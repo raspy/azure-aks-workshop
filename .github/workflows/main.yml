@@ -14,9 +14,10 @@ jobs:
     - run: |
         cd workshop-app
     # Set the target AKS cluster.    
-    - uses: Azure/aks-set-context@v1.1
+    - uses: Azure/aks-set-context@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
+        allow-no-subscriptions: true
         cluster-name: JFrogAKS
         resource-group: JFrogWorkshopCluster
     # Deploy to our AKS        
