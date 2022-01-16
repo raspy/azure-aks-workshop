@@ -13,7 +13,6 @@ jobs:
     # Create the Docker image and collect the envioroment variable
     - run: |
         cd workshop-app
-        docker build . --file Dockerfile --tag bateltest.jfrog.io/azure-workshop/aks 
     # Set the target AKS cluster.    
     - uses: Azure/aks-set-context@v1.1
       with:
