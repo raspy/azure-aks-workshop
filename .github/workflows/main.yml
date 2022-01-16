@@ -29,7 +29,5 @@ jobs:
         images: |
           bateltest.jfrog.io/azure-workshop/aks
     - run: |
-        jfrog rt dl artifacts/
-        jfrog rt u aether artifacts/
         jfrog rt bce
         jfrog rt bp
