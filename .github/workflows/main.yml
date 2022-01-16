@@ -14,7 +14,6 @@ jobs:
     - run: |
         cd workshop-app
         docker build . --file Dockerfile --tag bateltest.jfrog.io/azure-workshop/aks 
-        jfrog rt dp bateltest.jfrog.io/azure-workshop/aks azure-workshop
     # Set the target AKS cluster.    
     - uses: Azure/aks-set-context@v1.1
       with:
