@@ -13,8 +13,8 @@ jobs:
     # Create the Docker image and collect the envioroment variable
     - run: |
         cd workshop-app
-        docker build . --file Dockerfile --tag batel-test.jfrog.io/azure-workshop/aks 
-        jfrog rt dp batel-test.jfrog.io/azure-workshop/aks azure-workshop
+        docker build . --file Dockerfile --tag bateltest.jfrog.io/azure-workshop/aks 
+        jfrog rt dp bateltest.jfrog.io/azure-workshop/aks azure-workshop
     # Set the target AKS cluster.    
     - uses: Azure/aks-set-context@v1.1
       with:
@@ -27,7 +27,7 @@ jobs:
         manifests: |
           deployment.yml
         images: |
-          batel-test.jfrog.io/azure-workshop/azure-workshop
+          bateltest.jfrog.io/azure-workshop/aks
     - run: |
         jfrog rt dl artifacts/
         jfrog rt u aether artifacts/
