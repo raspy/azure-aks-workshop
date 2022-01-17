@@ -7,26 +7,26 @@
     <meta name="description" content="JFrog Platform on Azure Workshop">
 <meta name="author" content="JFrog">
 
-    <link rel="icon" href="https://jfrogtraining.github.io/azure-aks-workshop/images/favicon.png" type="image/png">
+    <link rel="icon" href="https://batelt.github.io/azure-aks-workshop/images/favicon.png" type="image/png">
 
     <title>Continuous Integration and Delivery :: JFrog Platform on Azure Workshop</title>
 
     
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/nucleus.css?1642407091" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/fontawesome-all.min.css?1642407091" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/hybrid.css?1642407091" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/featherlight.min.css?1642407091" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/perfect-scrollbar.min.css?1642407091" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/auto-complete.css?1642407091" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/atom-one-dark-reasonable.css?1642407091" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/theme.css?1642407091" rel="stylesheet">
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/hugo-theme.css?1642407091" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/nucleus.css?1642407817" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/fontawesome-all.min.css?1642407817" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/hybrid.css?1642407817" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/featherlight.min.css?1642407817" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/perfect-scrollbar.min.css?1642407817" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/auto-complete.css?1642407817" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/atom-one-dark-reasonable.css?1642407817" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/theme.css?1642407817" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/hugo-theme.css?1642407817" rel="stylesheet">
     
-    <link href="https://jfrogtraining.github.io/azure-aks-workshop/css/theme-mine.css?1642407091" rel="stylesheet">
+    <link href="https://batelt.github.io/azure-aks-workshop/css/theme-mine.css?1642407817" rel="stylesheet">
     
     
 
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/jquery-3.3.1.min.js?1642407091"></script>
+    <script src="https://batelt.github.io/azure-aks-workshop/js/jquery-3.3.1.min.js?1642407817"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,14 +36,14 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jfrogtraining.github.io/azure-aks-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html">
+  <body class="" data-url="https://batelt.github.io/azure-aks-workshop/2_devops_cloud/21_continuous_integration_and_delivery.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <a href="https://jfrogtraining.github.io/azure-aks-workshop/" title="Go home"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.77937in" height="2.68795in" version="1.0" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+      <a href="https://batelt.github.io/azure-aks-workshop/" title="Go home"><svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.77937in" height="2.68795in" version="1.0" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
 viewBox="0 0 1014.42 981.05"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
@@ -67,14 +67,14 @@ viewBox="0 0 1014.42 981.05"
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jfrogtraining.github.io/azure-aks-workshop/js/lunr.min.js?1642407091"></script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/azure-aks-workshop/js/auto-complete.js?1642407091"></script>
+<script type="text/javascript" src="https://batelt.github.io/azure-aks-workshop/js/lunr.min.js?1642407817"></script>
+<script type="text/javascript" src="https://batelt.github.io/azure-aks-workshop/js/auto-complete.js?1642407817"></script>
 <script type="text/javascript">
     
-        var baseurl = "https:\/\/jfrogtraining.github.io\/azure-aks-workshop\/";
+        var baseurl = "https:\/\/batelt.github.io\/azure-aks-workshop\/";
     
 </script>
-<script type="text/javascript" src="https://jfrogtraining.github.io/azure-aks-workshop/js/search.js?1642407091"></script>
+<script type="text/javascript" src="https://batelt.github.io/azure-aks-workshop/js/search.js?1642407817"></script>
 
     
   </div>
@@ -1339,19 +1339,19 @@ viewBox="0 0 1014.42 981.05"
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/clipboard.min.js?1642407091"></script>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/perfect-scrollbar.min.js?1642407091"></script>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/perfect-scrollbar.jquery.min.js?1642407091"></script>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/jquery.sticky.js?1642407091"></script>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/featherlight.min.js?1642407091"></script>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/highlight.pack.js?1642407091"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/clipboard.min.js?1642407817"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/perfect-scrollbar.min.js?1642407817"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/perfect-scrollbar.jquery.min.js?1642407817"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/jquery.sticky.js?1642407817"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/featherlight.min.js?1642407817"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/highlight.pack.js?1642407817"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/modernizr.custom-3.6.0.js?1642407091"></script>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/learn.js?1642407091"></script>
-    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/hugo-learn.js?1642407091"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/modernizr.custom-3.6.0.js?1642407817"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/learn.js?1642407817"></script>
+    <script src="https://jfrogtraining.github.io/azure-aks-workshop/js/hugo-learn.js?1642407817"></script>
     
         
-            <script src="https://jfrogtraining.github.io/azure-aks-workshop/mermaid/mermaid.js?1642407091"></script>
+            <script src="https://jfrogtraining.github.io/azure-aks-workshop/mermaid/mermaid.js?1642407817"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
