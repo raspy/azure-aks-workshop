@@ -15,7 +15,7 @@ jobs:
         jfrog --version
         cd workshop-app
         docker build . --file Dockerfile --tag ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/akm022-docker/aks 
-        jfrog rt dp ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/akm022-docker/aks azure-workshop
+        jfrog rt dp ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/akm022-docker/aks akm022-workshop
     # Set the target AKS cluster.    
     - uses: Azure/aks-set-context@v1
       with:
