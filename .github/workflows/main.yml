@@ -12,6 +12,7 @@ jobs:
         JF_ARTIFACTORY_1: ${{ secrets.JF_ARTIFACTORY_SECRET_1 }}
     # Create the Docker image and collect the envioroment variable
     - run: |
+        jfrog --version
         cd workshop-app
         docker build . --file Dockerfile --tag ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/azure-workshop/aks 
         jfrog rt dp ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/azure-workshop/aks azure-workshop
