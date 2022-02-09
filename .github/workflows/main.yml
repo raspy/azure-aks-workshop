@@ -14,21 +14,21 @@ jobs:
     - run: |
         jfrog --version
         cd workshop-app
-        docker build . --file Dockerfile --tag ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/azure-workshop/aks 
-        jfrog rt dp ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/azure-workshop/aks azure-workshop
+        docker build . --file Dockerfile --tag ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/akm022-docker/aks 
+        jfrog rt dp ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/akm022-docker/aks azure-workshop
     # Set the target AKS cluster.    
     - uses: Azure/aks-set-context@v1
       with:
         creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: JFrogAKS
-        resource-group: JFrogWorkshopCluster
+        cluster-name: aks-jfrog
+        resource-group: JFrogWorkshop
     # Deploy to our AKS        
     - uses: Azure/k8s-deploy@v1.3
       with:
         manifests: |
           deployment.yml
         images: |
-          ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/azure-workshop/aks
+          ${{ secrets.JF_ARTIFACTORY_SERVER }}.jfrog.io/akm022-docker/aks
     - run: |
         jfrog rt bce
         jfrog rt bp
